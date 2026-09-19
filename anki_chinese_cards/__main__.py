@@ -68,8 +68,8 @@ def main():
     )
 
     selenium_driver = SeleniumDriver().setup()
-    hc = HanziCraft(selenium_driver, config.anki_file_dir, config.translation_language)
-    tc = TrainChinese(selenium_driver)
+    hc = HanziCraft(selenium_driver, config.anki_file_dir)
+    tc = TrainChinese(selenium_driver, config.translation_language)
 
     # Uncomment if you need to pass Captcha
     tc.do_captcha()
