@@ -119,6 +119,10 @@ class HanziCraft:
                 definition = entry.find_element(
                     By.CSS_SELECTOR, ".popup-definition"
                 ).text.strip()
+                
+                if not pinyin_text or not definition:
+                    logging.warning("Skipping entry with empty pinyin/definition")
+                    continue
 
                 meanings.append(HanziCraftCharMeaning(pinyin, definition))
 
